@@ -6,3 +6,5 @@ XGboost_parameter_selection.ipynb-Contains the thought process behind how the XG
 xgboost_top5_btc_model.pkl-The xgboost regressor model used in the final PMM.
 
 ml_pmm_risk_managed.py-Main PMM file(Contains AS model+Xgboost)
+
+csv file for xgboost training-https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt

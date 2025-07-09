@@ -25,18 +25,18 @@ class MlPmmRiskManaged(ScriptStrategyBase):
         self.exchange = "binance_paper_trade"
         
         # OPTIMIZED CONSTANTS - Key improvements for PMM strategy
-        self.inventory_risk_aversion = 0.05  # Reduced from 0.1 for more aggressive market making
-        self.k = 0.15  # Reduced base spread from 0.3 for tighter markets
-        self.gamma = 0.01  # Reduced volatility impact from 0.02
+        self.inventory_risk_aversion = 0.05  
+        self.k = 0.15  #
+        self.gamma = 0.01 
         
         # Risk management - optimized for 1-minute refresh
-        self.cooldown_period = 180  # Reduced from 300s to 3 minutes
-        self.stop_loss_pct = -0.02  # Tighter stop loss from -3% to -2%
+        self.cooldown_period = 180  
+        self.stop_loss_pct = -0.02  
         
         # Order management - optimized for 1-minute strategy
         self.last_order_refresh = 0
-        self.order_refresh_time = 60  # Reduced from 150s to 1 minute
-        self.order_amount = Decimal("0.002")  # Increased from 0.001 for better liquidity
+        self.order_refresh_time = 60  
+        self.order_amount = Decimal("0.002") 
         
         # Performance tracking
         self.last_loss_time = None
@@ -45,8 +45,8 @@ class MlPmmRiskManaged(ScriptStrategyBase):
         self.last_filled_amount = None
         
         # Volatility-based spread adjustment
-        self.min_spread = 0.0005  # 0.05% minimum spread
-        self.max_spread = 0.005   # 0.5% maximum spread
+        self.min_spread = 0.0005  
+        self.max_spread = 0.005   
         
         # Moving average for price smoothing
         self.price_history = []
@@ -61,7 +61,7 @@ class MlPmmRiskManaged(ScriptStrategyBase):
         }
 
     def tick_interval(self) -> float:
-        return 10.0  # Reduced from 15s for more responsive trading
+        return 10.0  
 
     def fetch_binance_candles(self, symbol="BTC/USDT", timeframe="1m", limit=30):
         """Increased limit for better feature calculation"""
